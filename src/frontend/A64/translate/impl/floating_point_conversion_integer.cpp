@@ -87,7 +87,7 @@ bool TranslatorVisitor::FMOV_float_gen(bool sf, Imm<2> type, Imm<1> rmode_0, Imm
     size_t part;
     switch (rmode_0.ZeroExtend()) {
     case 0b0:
-        if (fltsize != 16 && fltsize != intsize) {
+        if (fltsize != intsize) {
             return UnallocatedEncoding();
         }
         integer_to_float = opc_0 == 0b1;
